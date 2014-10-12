@@ -6,9 +6,9 @@ RSpec.describe Party, :type => :model do
     @munchkins = Party.create(name: "Munchkins", goal: "Loot literally everything", motto: "FBGMST")
 
     @healbot = @munchkins.characters.create(name: 'Healbot', job: :healer)
-    @slashy = @munchkins.characters.create(name: 'Slashy', job: :dips)
-    @stabby = @munchkins.characters.create(name: 'Stabby', job: :dips)
-    @nukey = @munchkins.characters.create(name: 'Nukey', job: :dips)
+    @slashy = @munchkins.characters.create(name: 'Slashy', job: :dps)
+    @stabby = @munchkins.characters.create(name: 'Stabby', job: :dps)
+    @nukey = @munchkins.characters.create(name: 'Nukey', job: :dps)
     @chunky = @munchkins.characters.create(name: 'Chunky', job: :tank)
   end
 
@@ -18,7 +18,7 @@ RSpec.describe Party, :type => :model do
       pending "having trouble figuring out how to do this"
 
       # this is so i can just go Party.characters.each do |character|
-      # and assume that it will go in tank->dips->healer order
+      # and assume that it will go in tank->dps->healer order
 
       # ...how do i do this, though?
 

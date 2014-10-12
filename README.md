@@ -35,3 +35,14 @@ I need practice learning how to write these!
 * Outputs a list of characters in order of their job.
   * e.g., tanks, then dips, then healers.
   * So I'd go Party.characters.each |character| puts character.name character.job etc. and it'd be in order.
+  * Having trouble figuring this out. The order is:
+    * Tank
+    * DPS
+    * Healer
+  * but I don't quite know how to say "tank comes before dps comes before healer".
+
+## Character
+
+* Outputs job attribute as a properly formatted string.
+  * e.g. :tank --> "Tank", :dps --> "DPS", :healer -> "Healer"
+  * Is there a nicer way to do this than a conditional statement?
