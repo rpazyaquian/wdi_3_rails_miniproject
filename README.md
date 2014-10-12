@@ -25,3 +25,13 @@ Name is a string.
 Class is also a string, although it will be passed around as a symbol.
 
 This is terribly simplistic, but we'll go with this for now.
+
+# Specifications
+
+I need practice learning how to write these!
+
+## Party
+
+* Outputs a list of characters in order of their job.
+  * e.g., tanks, then dips, then healers.
+  * So I'd go Party.characters.each |character| puts character.name character.job etc. and it'd be in order.
