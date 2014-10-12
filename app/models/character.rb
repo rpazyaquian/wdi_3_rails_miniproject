@@ -2,11 +2,14 @@ class Character < ActiveRecord::Base
   belongs_to :party
 
   def job
-    job = read_attribute(:job).to_s
-    if job == 'dps'
-      job.upcase
-    else
-      job.capitalize
-    end
+    jobs[read_attribute(:job).to_sym]
+  end
+
+  def jobs
+    {
+      tank: "Tank",
+      dps: "DPS",
+      healer: "Healer"
+    }
   end
 end
