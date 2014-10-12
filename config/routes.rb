@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
+  root "parties#index"
   resources :parties
-  resources :characters
+  resources :characters, only: [:show, :create, :update, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
