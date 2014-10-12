@@ -1,0 +1,28 @@
+<h1><%= @party.name %></h1>
+
+<h2>"<%= @party.motto %>"</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Job</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @party.characters.each do |character| %>
+  <tr>
+    <td><%= character.name %></td>
+    <td><%= character.job %></td>
+    <td>Edit</td>
+    <td>Delete</td>
+  </tr>
+  <% end %>
+</table>
+
+<%= form_for @character do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :job %>
+  <%= f.submit %>
+<% end %>

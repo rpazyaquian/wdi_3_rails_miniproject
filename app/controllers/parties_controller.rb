@@ -7,7 +7,7 @@ class PartiesController < ApplicationController
   end
   def create
     @party = Party.create(party_params)
-    redirect_to root_route
+    redirect_to root_path
   end
   def new
     @party = Party.new
@@ -15,10 +15,15 @@ class PartiesController < ApplicationController
   def edit
   end
   def show
+    @character = Character.new
   end
   def update
+    @party.update(party_params)
+    redirect_to @party
   end
   def destroy
+    @party.destroy
+    redirect_to root_path
   end
 
   private

@@ -1,0 +1,23 @@
+<h1>Parties</h1>
+
+<table>
+  <tr>
+    <th>Party</th>
+    <th>Goal</th>
+    <th>Motto</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <tr>
+  <% @parties.each do |party| %>
+    <td><%= link_to party.name, party %></td>
+    <td><%= party.goal %></td>
+    <td><%= party.motto %></td>
+    <td>Edit</td>
+    <td>Delete</td>
+  <% end %>
+  </tr>
+</table>
+
+<%= link_to "Create new party", new_party_path %>
