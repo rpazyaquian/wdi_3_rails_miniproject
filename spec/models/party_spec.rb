@@ -15,8 +15,12 @@ RSpec.describe Party, :type => :model do
   describe "instance" do
     it "outputs characters in order of job" do
 
+      pending "having trouble figuring out how to do this"
+
       # this is so i can just go Party.characters.each do |character|
       # and assume that it will go in tank->dips->healer order
+
+      # ...how do i do this, though?
 
       characters = @munchkins.characters.map do |character|
         character.name
