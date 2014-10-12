@@ -46,3 +46,7 @@ I need practice learning how to write these!
 * Outputs job attribute as a properly formatted string.
   * e.g. :tank --> "Tank", :dps --> "DPS", :healer -> "Healer"
   * Is there a nicer way to do this than a conditional statement?
+
+# Testing Controllers and Views
+
+I understand the concept behind testing Models, but testing Controllers and Views is a little different...
