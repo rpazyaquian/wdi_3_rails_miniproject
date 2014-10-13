@@ -20,6 +20,10 @@ class Character < ActiveRecord::Base
     end
   end
 
+  def method_missing(meth, *args, &blk)
+    self.stat_sheet.read_attribute(meth.to_sym)
+  end
+
   after_create :roll_stat_sheet
 
   private
