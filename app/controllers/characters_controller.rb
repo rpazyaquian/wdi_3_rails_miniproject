@@ -11,6 +11,10 @@ class CharactersController < ApplicationController
     redirect_to :back
   end
 
+  def show
+    @character = Character.find(params[:id])
+  end
+
   private
     def character_params
       params.require(:character).permit(:name, :job, :party_id)
