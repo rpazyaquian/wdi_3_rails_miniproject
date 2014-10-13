@@ -12,4 +12,10 @@ class Character < ActiveRecord::Base
       healer: "Healer"
     }
   end
+
+  def job_choices
+    jobs.to_a.map do |choice|
+      choice.reverse
+    end
+  end
 end

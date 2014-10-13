@@ -7,15 +7,13 @@
     <th>Name</th>
     <th>Job</th>
     <th></th>
-    <th></th>
   </tr>
 
   <% @party.characters.each do |character| %>
   <tr>
     <td><%= character.name %></td>
     <td><%= character.job %></td>
-    <td>Edit</td>
-    <td>Delete</td>
+    <td>Dismiss</td>
   </tr>
   <% end %>
 </table>
@@ -24,5 +22,6 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :job %>
+  <%= f.select(:job, @character.job_choices) %>
   <%= f.submit %>
 <% end %>

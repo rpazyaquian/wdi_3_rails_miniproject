@@ -15,7 +15,7 @@ class PartiesController < ApplicationController
   def edit
   end
   def show
-    @character = Character.new
+    @character = Character.new(name: "Generic Doofus", job: :tank)
   end
   def update
     @party.update(party_params)
@@ -30,5 +30,9 @@ class PartiesController < ApplicationController
 
     def set_party
       @party = Party.find(params[:id])
+    end
+
+    def party_params
+      params.require(:party).permit(:name, :goal, :motto)
     end
 end
