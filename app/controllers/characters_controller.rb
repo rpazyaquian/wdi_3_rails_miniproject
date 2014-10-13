@@ -1,8 +1,10 @@
 class CharactersController < ApplicationController
+
   def create
     @character = Character.create(character_params)
     redirect_to :back
   end
+
   def destroy
     @character = Character.find(params[:id])
     @character.destroy
