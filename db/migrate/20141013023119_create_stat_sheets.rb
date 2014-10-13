@@ -6,6 +6,7 @@ class CreateStatSheets < ActiveRecord::Migration
       t.integer :attack
       t.integer :defense
       t.integer :speed
+      t.belongs_to :character
 
       t.timestamps null: false
     end

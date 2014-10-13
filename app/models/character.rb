@@ -1,5 +1,6 @@
 class Character < ActiveRecord::Base
   belongs_to :party
+  has_a :stat_sheet
 
   def job
     jobs[read_attribute(:job).to_sym]

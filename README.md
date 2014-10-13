@@ -73,6 +73,6 @@ Should I make a stats model? A character's stats will basically look like this:
 
 If it's basically a hash, shouldn't I just make stats its own model?
 
-    class StatSheet (oh god, plural) < ActiveRecord::Base
+    class StatSheet < ActiveRecord::Base
       belongs_to :character
     end
