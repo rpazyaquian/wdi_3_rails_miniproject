@@ -1,6 +1,6 @@
 class Character < ActiveRecord::Base
   belongs_to :party
-  has_a :stat_sheet
+  has_one :stat_sheet
 
   def job
     jobs[read_attribute(:job).to_sym]
@@ -19,4 +19,12 @@ class Character < ActiveRecord::Base
       choice.reverse
     end
   end
+
+  after_create :roll_stat_sheet
+
+  private
+
+    def roll_stat_sheet
+      StatSheet.roll(self)
+    end
 end
