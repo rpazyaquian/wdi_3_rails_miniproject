@@ -50,3 +50,29 @@ I need practice learning how to write these!
 # Testing Controllers and Views
 
 I understand the concept behind testing Models, but testing Controllers and Views is a little different...
+
+# Stats
+
+I want each character to have randomly generated stats.
+
+* HP
+* SP
+* Attack
+* Defense
+* Speed
+
+Should I make a stats model? A character's stats will basically look like this:
+
+    stats = {
+      hp: 10,
+      sp: 10,
+      attack: 10,
+      defense: 10,
+      speed: 10
+    }
+
+If it's basically a hash, shouldn't I just make stats its own model?
+
+    class StatSheet (oh god, plural) < ActiveRecord::Base
+      belongs_to :character
+    end
