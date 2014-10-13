@@ -6,18 +6,16 @@
     <th>Goal</th>
     <th>Motto</th>
     <th></th>
-    <th></th>
   </tr>
 
-  <tr>
   <% @parties.each do |party| %>
+  <tr>
     <td><%= link_to party.name, party %></td>
     <td><%= party.goal %></td>
     <td><%= party.motto %></td>
-    <td>Edit</td>
-    <td>Delete</td>
-  <% end %>
+    <td><%= link_to "Disband", party_path(party.id), method: :delete %></td>
   </tr>
+  <% end %>
 </table>
 
 <h2>Create New Party</h2>
