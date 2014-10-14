@@ -49,3 +49,4 @@ end
 gem 'foundation-rails'
 gem 'rails_12factor'
 gem 'devise'
+gem 'rails_best_practices'
