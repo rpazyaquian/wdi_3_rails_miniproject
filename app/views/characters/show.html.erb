@@ -16,4 +16,12 @@
   </tr>
 </table>
 
-<p><%= @character.profile %></p>
+<h2>Profile</h2>
+
+<p>
+  <% if @character.profile %>
+  <%= @character.profile %>
+  <% else %>
+  This character remains silent when you ask them about themselves.
+  <% end %> 
+</p>
