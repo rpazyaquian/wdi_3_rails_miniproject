@@ -20,6 +20,12 @@ class Character < ActiveRecord::Base
     end
   end
 
+  def stats
+    stats = [:hp, :sp, :attack, :defense, :speed].map do |stat|
+      self.send(stat)
+    end
+  end
+
   def method_missing(meth, *args, &blk)
     self.stat_sheet.read_attribute(meth.to_sym)
   end

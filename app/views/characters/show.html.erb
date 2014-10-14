@@ -1,4 +1,4 @@
-<h1><%= @character.name %></h1>
+<h1><%= @character.name %> (<%= @character.job %>)</h1>
 
 <table>
   <tr>
@@ -10,5 +10,8 @@
   </tr>
 
   <tr>
+    <% @character.stats.each do |stat| %>
+    <td><%= stat %></td>
+    <% end %>
   </tr>
 </table>
