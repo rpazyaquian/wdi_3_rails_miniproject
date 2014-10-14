@@ -4,5 +4,9 @@
   <%= f.text_field :name %>
   <%= f.label :job %>
   <%= f.select(:job, @character.job_choices) %>
+
+  <%= f.label :profile %>
+  <%= f.text_field :profile %>
+
   <%= f.submit %>
 <% end %>
