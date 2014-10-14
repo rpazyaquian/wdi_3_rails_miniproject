@@ -1,6 +1,7 @@
 class PartiesController < ApplicationController
 
   before_action :set_party, only: [:edit, :show, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @party = Party.new

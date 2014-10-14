@@ -1,6 +1,7 @@
 class CharactersController < ApplicationController
 
   before_action :set_character, only: [:destroy, :show, :edit, :update]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     redirect_to root_path
