@@ -9,8 +9,9 @@ class PartiesController < ApplicationController
   end
 
   def create
-    @party = Party.create(party_params)
+    @party = Party.new(party_params)
     @party.user = current_user
+    @party.save
     redirect_to root_path
   end
 
