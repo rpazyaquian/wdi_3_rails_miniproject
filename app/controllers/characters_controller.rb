@@ -2,6 +2,10 @@ class CharactersController < ApplicationController
 
   before_action :set_character, only: [:destroy, :show, :edit, :update]
 
+  def index
+    redirect_to root_path
+  end
+
   def create
     @character = Character.create(character_params)
     redirect_to :back

@@ -48,3 +48,4 @@ end
 
 gem 'foundation-rails'
 gem 'rails_12factor'
+gem 'devise'
