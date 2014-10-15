@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Level</th>
     <th>HP</th>
     <th>SP</th>
     <th>Attack</th>
@@ -10,6 +11,7 @@
   </tr>
 
   <tr>
+    <td><%= @character.level %></td>
     <% @character.stats.each do |stat| %>
     <td><%= stat %></td>
     <% end %>

@@ -1,3 +1,4 @@
+rebecca = User.create(email: "rebecca@user.mac", username: "Rebecca", password: "megapassword123", password_confirmation: "megapassword123")
 munchkins = Party.create(name: "Munchkins", goal: "Loot literally everything", motto: "FBGMST")
 
 healbot = munchkins.characters.create(name: 'Healbot', job: :healer)
