@@ -11,24 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014154213) do
+ActiveRecord::Schema.define(version: 20141015001838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "characters", force: true do |t|
-    t.string   "name"
-    t.string   "job"
-    t.integer  "party_id"
+    t.string   "name",       null: false
+    t.string   "job",        null: false
+    t.integer  "party_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "profile"
+    t.integer  "level"
   end
 
   add_index "characters", ["party_id"], name: "index_characters_on_party_id", using: :btree
 
   create_table "parties", force: true do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.string   "goal"
     t.string   "motto"
     t.datetime "created_at", null: false
@@ -39,12 +40,12 @@ ActiveRecord::Schema.define(version: 20141014154213) do
   add_index "parties", ["user_id"], name: "index_parties_on_user_id", using: :btree
 
   create_table "stat_sheets", force: true do |t|
-    t.integer  "hp"
-    t.integer  "sp"
-    t.integer  "attack"
-    t.integer  "defense"
-    t.integer  "speed"
-    t.integer  "character_id"
+    t.integer  "hp",           null: false
+    t.integer  "sp",           null: false
+    t.integer  "attack",       null: false
+    t.integer  "defense",      null: false
+    t.integer  "speed",        null: false
+    t.integer  "character_id", null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

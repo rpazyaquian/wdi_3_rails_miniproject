@@ -1,6 +1,8 @@
 class Character < ActiveRecord::Base
   belongs_to :party
   has_one :stat_sheet
+  after_initialize :init
+  after_create :roll_stat_sheet
 
   def job
     jobs[read_attribute(:job).to_sym]
@@ -30,11 +32,14 @@ class Character < ActiveRecord::Base
     self.stat_sheet.read_attribute(meth.to_sym)
   end
 
-  after_create :roll_stat_sheet
-
   private
 
     def roll_stat_sheet
       StatSheet.roll(self)
     end
+
+    def init
+      self.level = 1
+    end
+
 end
