@@ -42,4 +42,12 @@ class Character < ActiveRecord::Base
       self.level = 1
     end
 
+    def level_up
+      self.level += 1
+      self.stat_sheet.send(level_up)  # there's a better way to do this, isn't there?
+      self.save
+
+      # dammit. this isn't working.
+    end
+
 end

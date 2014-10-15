@@ -11,4 +11,14 @@ class StatSheet < ActiveRecord::Base
       character_id: character.id
     )
   end
+
+  def level_up
+    # there has to be a better way to do this,
+    # but i'm blanking out.
+    self.hp += rand(5..8)
+    self.sp += rand(3..5)
+    self.attack += rand(2..4)
+    self.defense += rand(2..4)
+    self.speed += rand(2..4)
+  end
 end

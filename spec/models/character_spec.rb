@@ -21,5 +21,12 @@ RSpec.describe Character, :type => :model do
       expect(jobs).to eq(["Tank", "DPS", "Healer"])
 
     end
+
+    it "levels up" do
+      before_level = @chunky.level
+      after_level = @chunky.level_up
+      expect(after_level > before_level).to be_true
+    end
+
   end
 end
